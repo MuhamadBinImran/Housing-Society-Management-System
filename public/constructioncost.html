@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Cost Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        @media only screen and (max-width: 768px) {
+            /* CSS styles for small screens (e.g., mobile devices) */
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid deepskyblue;
+            padding: 40px;
+            border-radius: 20px;
+            width: 30rem;
+        }
+        
+        .form-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 2.5rem;
+            margin: 10px 0;
+        }
+        
+        .input {
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .input-icon {
+            width: 4rem;
+            height: 100%;
+            border: none;
+            background: deepskyblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .calculateBtn {
+            height: 3rem;
+            width: 100%;
+            border: 2px solid deepskyblue;
+            background: deepskyblue;
+            color: white;
+            font-size: 16px;
+            border-radius: 7px;
+            padding: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Construction Cost Calculator</h2>
+        <div class="form-input">
+            <input id="areaSize" class="input" type="number" placeholder="Area Size">
+            <select id="unit" class="input">
+                <option value="marla">Marla</option>
+                <option value="acre">Acre</option>
+            </select>
+        </div>
+        <button id="calculateBtn" class="calculateBtn">Calculate</button>
+        <div id="constructionCost"></div>
+    </div>
+    <script>
+        // Function to calculate construction cost
+function calculateCost() {
+    // Get input values
+    var areaSize = parseFloat(document.getElementById('areaSize').value);
+    var unit = document.getElementById('unit').value;
+    
+    // Validate input
+    if (isNaN(areaSize) || areaSize <= 0) {
+        alert("Please enter a valid area size.");
+        return;
+    }
+    
+    // Define construction cost per square foot ranges for different categories
+    var lowEndCostPerSqFt = 1500; // PKR
+    var midRangeCostPerSqFt = 2500; // PKR
+    var highEndCostPerSqFt = 4000; // PKR
+    
+    // Calculate construction cost based on selected unit
+    var constructionCost;
+    
+    switch(unit) {
+        case 'marla':
+            // Calculate area in square feet (1 marla = 272.25 square feet)
+            var areaSizeSqFt = areaSize * 272.25;
+            
+            // Determine construction cost per square foot based on area size
+            if (areaSizeSqFt <= 5000) {
+                constructionCost = lowEndCostPerSqFt * areaSizeSqFt;
+            } else if (areaSizeSqFt <= 10000) {
+                constructionCost = midRangeCostPerSqFt * areaSizeSqFt;
+            } else {
+                constructionCost = highEndCostPerSqFt * areaSizeSqFt;
+            }
+            break;
+            
+        case 'acre':
+            // Calculate area in square feet (1 acre = 43560 square feet)
+            var areaSizeSqFt = areaSize * 43560;
+            
+            // Determine construction cost per square foot based on area size
+            if (areaSizeSqFt <= 5000) {
+                constructionCost = lowEndCostPerSqFt * areaSizeSqFt;
+            } else if (areaSizeSqFt <= 10000) {
+                constructionCost = midRangeCostPerSqFt * areaSizeSqFt;
+            } else {
+                constructionCost = highEndCostPerSqFt * areaSizeSqFt;
+            }
+            break;
+            
+        default:
+            alert("Please select a valid unit.");
+            return;
+    }
+    
+    // Display result
+    document.getElementById('constructionCost').innerHTML = "Construction Cost: PKR " + constructionCost.toFixed(2);
+}
+
+// Event listener for calculate button
+document.getElementById('calculateBtn').addEventListener('click', calculateCost);
+
+    </script>
+</body>
+</html>

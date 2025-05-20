@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Loan Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        @media only screen and (max-width: 768px) {
+            /* CSS styles for small screens (e.g., mobile devices) */
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid deepskyblue;
+            padding: 40px;
+            border-radius: 20px;
+            width: 30rem;
+        }
+        
+        .form-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 2.5rem;
+            margin: 10px 0;
+        }
+        
+        .input {
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .input-icon {
+            width: 4rem;
+            height: 100%;
+            border: none;
+            background: deepskyblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .calculateBtn {
+            height: 3rem;
+            width: 100%;
+            border: 2px solid deepskyblue;
+            background: deepskyblue;
+            color: white;
+            font-size: 16px;
+            border-radius: 7px;
+            padding: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Home Loan Calculator</h2>
+        <div class="form-input">
+            <input id="propertyPrice" class="input" type="number" placeholder="Property Price (PKR)">
+            <div class="input-icon">&#x20a8;</div>
+        </div>
+        <div class="form-input">
+            <input id="downPayment" class="input" type="number" placeholder="Down Payment (%)">
+            <div class="input-icon">%</div>
+        </div>
+        <div class="form-input">
+            <input id="loanPeriod" class="input" type="number" placeholder="Loan Period (Years)">
+            <div class="input-icon">Years</div>
+        </div>
+        <button id="calculateBtn" class="calculateBtn">Calculate</button>
+        <div id="monthlyPayment"></div>
+        <div id="totalPayment"></div>
+    </div>
+    <script>
+        // Function to calculate monthly payment
+function calculateLoan() {
+    // Get input values
+    var propertyPrice = parseFloat(document.getElementById('propertyPrice').value);
+    var downPayment = parseFloat(document.getElementById('downPayment').value);
+    var loanPeriod = parseFloat(document.getElementById('loanPeriod').value);
+    
+    // Validate inputs
+    if (isNaN(propertyPrice) || isNaN(downPayment) || isNaN(loanPeriod)) {
+        alert("Please enter valid numbers.");
+        return;
+    }
+    
+    // Calculate loan amount
+    var loanAmount = propertyPrice - (propertyPrice * downPayment / 100);
+    
+    // Calculate monthly interest rate
+    var monthlyInterestRate = (5 / 100) / 12; // Assuming 5% annual interest rate
+    
+    // Calculate number of payments
+    var numberOfPayments = loanPeriod * 12;
+    
+    // Calculate monthly payment
+    var monthlyPayment = loanAmount * monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+    
+    // Calculate total payment
+    var totalPayment = monthlyPayment * numberOfPayments;
+    
+    // Display results
+    document.getElementById('monthlyPayment').innerHTML = "Monthly Payment: PKR " + monthlyPayment.toFixed(2);
+    document.getElementById('totalPayment').innerHTML = "Total Payment: PKR " + totalPayment.toFixed(2);
+}
+
+// Event listener for calculate button
+document.getElementById('calculateBtn').addEventListener('click', calculateLoan);
+
+    </script>
+</body>
+</html>

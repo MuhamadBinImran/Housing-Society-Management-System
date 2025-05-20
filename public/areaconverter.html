@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Area Unit Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        @media only screen and (max-width: 768px) {
+            /* CSS styles for small screens (e.g., mobile devices) */
+        }
+        
+        body {
+            background-color: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid deepskyblue;
+            padding: 40px;
+            border-radius: 20px;
+            width: 30rem;
+        }
+        
+        .form-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 2.5rem;
+            margin: 10px 0;
+        }
+        
+        .input {
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .input-icon {
+            width: 4rem;
+            height: 100%;
+            border: none;
+            background: deepskyblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .calculateBtn {
+            height: 3rem;
+            width: 100%;
+            border: 2px solid deepskyblue;
+            background: deepskyblue;
+            color: white;
+            font-size: 16px;
+            border-radius: 7px;
+            padding: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Area Unit Converter</h2>
+        <div class="form-input">
+            <input id="inputArea" class="input" type="number" placeholder="Enter Area">
+        </div>
+        <div class="form-input">
+            <select id="unitSelect" class="input">
+                <option value="sqft">Square Feet (sq.ft)</option>
+                <option value="sqm">Square Meter (sq.m)</option>
+                <option value="acre">Acre</option>
+                <option value="hectare">Hectare</option>
+            </select>
+        </div>
+        <button id="calculateBtn" class="calculateBtn">Convert</button>
+        <div id="convertedArea"></div>
+    </div>
+    <script>
+        // Function to convert area units
+function convertArea() {
+    // Get input values
+    var inputArea = parseFloat(document.getElementById('inputArea').value);
+    var selectedUnit = document.getElementById('unitSelect').value;
+    
+    // Validate input
+    if (isNaN(inputArea)) {
+        alert("Please enter a valid number.");
+        return;
+    }
+    
+    // Perform conversion
+    var convertedArea;
+    switch (selectedUnit) {
+        case 'sqft':
+            convertedArea = {
+                sqft: inputArea,
+                sqm: inputArea * 0.092903,
+                acre: inputArea * 2.2957e-5,
+                hectare: inputArea * 9.2903e-6
+            };
+            break;
+        case 'sqm':
+            convertedArea = {
+                sqft: inputArea * 10.7639,
+                sqm: inputArea,
+                acre: inputArea * 0.000247105,
+                hectare: inputArea * 1e-4
+            };
+            break;
+        case 'acre':
+            convertedArea = {
+                sqft: inputArea * 43560,
+                sqm: inputArea * 4046.86,
+                acre: inputArea,
+                hectare: inputArea * 0.404686
+            };
+            break;
+        case 'hectare':
+            convertedArea = {
+                sqft: inputArea * 107639,
+                sqm: inputArea * 10000,
+                acre: inputArea * 2.47105,
+                hectare: inputArea
+            };
+            break;
+        default:
+            alert("Invalid unit selection.");
+            return;
+    }
+    
+    // Display converted area
+    document.getElementById('convertedArea').innerHTML = `
+        <p>Area in Square Feet (sq.ft): ${convertedArea.sqft.toFixed(2)}</p>
+        <p>Area in Square Meter (sq.m): ${convertedArea.sqm.toFixed(2)}</p>
+        <p>Area in Acre: ${convertedArea.acre.toFixed(2)}</p>
+        <p>Area in Hectare: ${convertedArea.hectare.toFixed(2)}</p>
+    `;
+}
+
+// Event listener for convert button
+document.getElementById('calculateBtn').addEventListener('click', convertArea);
+    </script>
+</body>
+</html>

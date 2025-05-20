@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@media only screen and (max-width: 768px) {
+    /* CSS styles for small screens (e.g., mobile devices) */
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('login.jpg'); /* Set body background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Ensure the background covers the entire viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            padding: 40px; /* Reduce padding to bring content closer to the edges */
+            /* Increase shadow for prominence */
+            width: 100%; /* Set login container width to fill the entire page */
+            max-width: 500px; /* Set maximum width for the login container */
+        }
+        .login-container h2 {
+            font-weight:bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ced71b; /* Darken text color for better contrast */
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px; /* Increase padding for better input field prominence */
+            margin-bottom: 20px; /* Increase margin bottom for spacing */
+            border: 1px solid #aaa; /* Darken border color for better contrast */
+            border-radius: 5px;
+        }
+        .login-container input[type="submit"] {
+            width: 105%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ced71b;
+            color: #fff;
+            cursor: pointer;
+            font-size: x-large;
+            transition: background-color 0.3s; /* Add smooth transition for hover effect */
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #00b3b3; /* Darken background color on hover for visual feedback */
+        }
+        .forgot-password {
+            text-align: center;
+            padding-left: 50px;
+            margin-top: 10px;
+            color: #666; /* Darken text color for better visibility */
+        }
+        .forgot-password a {
+            color: #ced71b; /* Change link color for better visibility */
+            font-size:x-large;
+        }
+        .forgot-password a:hover {
+            color: #00b3b3; 
+            text-decoration: underline; /* Add underline effect on hover */
+        }

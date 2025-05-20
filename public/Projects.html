@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Gallery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  @media only screen and (max-width: 768px) {
+    /* CSS styles for small screens (e.g., mobile devices) */
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+    }
+    
+    .project {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .project:hover {
+        transform: translateY(-5px);
+    }
+    
+    .project img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .project:hover img {
+        transform: scale(1.05);
+    }
+    
+    .project h2 {
+        margin-top: 10px;
+        font-size: 20px;
+        color: #333;
+    }
+    
+    .project p {
+        margin-top: 5px;
+        color: #666;
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+</style>
+</head>
+<body>
+  <header>
+    <h1>Projects Gallery</h1>
+  </header>
+  <main>
+    <section class="projects">
+      <div class="project">
+        <img src="project1.jpeg" alt="Project 1">
+        <h2>Community Park Renovation</h2>
+        <p>Renovation of the community park to include new play equipment, seating areas, and landscaping.</p>
+        <p><strong>Completion Date:</strong> January 2023</p>
+        <p><strong>Duration:</strong> 6 months</p>
+        <p><strong>Cost:</strong> $50,000</p>
+      </div>
+      <div class="project">
+        <img src="project2.jpeg" alt="Project 2">
+        <h2>Solar Panel Installation</h2>
+        <p>Installation of solar panels on rooftops to reduce electricity costs and promote sustainability.</p>
+        <p><strong>Completion Date:</strong> March 2023</p>
+        <p><strong>Duration:</strong> 8 months</p>
+        <p><strong>Cost:</strong> $100,000</p>
+      </div>
+      <div class="project">
+        <img src="project3.jpeg" alt="Project 3">
+        <h2>Water Conservation System</h2>
+        <p>Implementation of a water conservation system including rainwater harvesting and drip irrigation.</p>
+        <p><strong>Completion Date:</strong> May 2023</p>
+        <p><strong>Duration:</strong> 4 months</p>
+        <p><strong>Cost:</strong> $30,000</p>
+      </div>
+      <div class="project">
+        <img src="project4.jpeg" alt="Project 4">
+        <h2>Community Hall Upgrade</h2>
+        <p>Upgrade of the community hall with new flooring, lighting, and audiovisual equipment.</p>
+        <p><strong>Completion Date:</strong> July 2023</p>
+        <p><strong>Duration:</strong> 5 months</p>
+        <p><strong>Cost:</strong> $80,000</p>
+      </div>
+      <!-- Add more project entries as needed -->
+    </section>
+  </main>
+  
+</body>
+</html>

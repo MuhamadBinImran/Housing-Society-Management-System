@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housing Society Complaint Form</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    body {
+        align-items: center;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        margin: 0; /* Add to reset default margin */
+    }
+    @media only screen and (max-width: 768px) {
+      /* CSS styles for small screens (e.g., mobile devices) */
+  }
+  
+    .form {
+        background-color: #15172b;
+        border-radius: 20px;
+        box-sizing: border-box;
+        height: 500px;
+        padding: 20px;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .title {
+        color: #eee;
+        font-family: Arial, sans-serif; /* Change font-family to Arial */
+        font-size: 36px;
+        font-weight: 600;
+        margin-top: 30px;
+        text-align: center; /* Add to center the text */
+    }
+    
+    .subtitle {
+        color: #eee;
+        font-family: Arial, sans-serif; /* Change font-family to Arial */
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+        text-align: center; /* Add to center the text */
+    }
+    
+    .input-container {
+        position: relative;
+    }
+    
+    .input {
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
+    }
+    
+    .cut {
+        background-color: #15172b;
+        border-radius: 10px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+    }
+    
+    .cut-short {
+        width: 50px;
+    }
+    
+    .input:focus ~ .cut,
+    .input:not(:placeholder-shown) ~ .cut {
+        transform: translateY(8px);
+    }
+    
+    .placeholder {
+        color: #65657b;
+        font-family: Arial, sans-serif; /* Change font-family to Arial */
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+    }
+    
+    .input:focus ~ .placeholder,
+    .input:not(:placeholder-shown) ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+    }
+    
+    .input:not(:placeholder-shown) ~ .placeholder {
+        color: #808097;
+    }
+    
+    .input:focus ~ .placeholder {
+        color: #dc2f55;
+    }
+    
+    .submit {
+        background-color: #08d;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        /* outline: 0; */ /* Remove this line */
+        text-align: center;
+    }
+    
+    .submit:active {
+        background-color: #06b;
+    }
+</style>
+</head>
+<body>
+  <form class="form" action="/submit_complaint" method="post">
+    <div class="title">File a Complaint</div>
+    <div class="subtitle">We are here to help you!</div>
+    <div class="input-container">
+      <input id="fullname" class="input" name="fullname" type="text" placeholder=" ">
+      <div class="cut"></div>
+      <label for="fullname" class="placeholder">Full Name</label>
+    </div>
+    <div class="input-container">
+      <input id="email" class="input" name="email" type="email" placeholder=" ">
+      <div class="cut"></div>
+      <label for="email" class="placeholder">Email</label>
+    </div>
+    <div class="input-container">
+      <input id="telephone" class="input" name="telephone" type="tel" placeholder=" ">
+      <div class="cut"></div>
+      <label for="telephone" class="placeholder">Telephone (Optional)</label>
+    </div>
+    <div class="input-container">
+      <select id="complaint-type" class="input" name="complaintType">
+        <option value="" selected disabled>Select complaint type</option>
+        <option value="Maintenance">Maintenance</option>
+        <option value="Security">Security</option>
+        <option value="Noise">Noise</option>
+        <option value="Other">Other</option>
+      </select>
+      <div class="cut"></div>
+      <label for="complaint-type" class="placeholder">Complaint Type</label>
+    </div>
+    <div class="input-container">
+      <textarea id="complaint-details" class="input" name="complaintDetails" placeholder=" "></textarea>
+      <div class="cut"></div>
+      <label for="complaint-details" class="placeholder">Complaint Details</label>
+    </div>
+    <button type="submit" class="submit">File Complaint</button>
+  </form>
+</body>
+</html>
