@@ -85,8 +85,7 @@ Follow these steps to set up the project locally:
 
 ## 📸 Screenshots
 
-![Uploading image.png…]()
-
+![image](https://github.com/user-attachments/assets/9667443a-d208-40f6-8e42-1dbecc87d8fd)
 
 ---
 
