@@ -1,4 +1,3 @@
-````markdown
 # 🏡 Housing Society Management System
 
 Welcome to the **Housing Society Management System**, a web application designed to simplify community living and management for a better tomorrow. This project provides core features such as user authentication, housing listings, and a responsive interface.
@@ -9,32 +8,37 @@ Welcome to the **Housing Society Management System**, a web application designed
 
 This is a full-stack web application designed to manage housing society operations efficiently. It is built using:
 
-- **Frontend**: HTML, CSS, JavaScript  
-- **Backend**: Node.js with Express  
+* **Frontend**: HTML, CSS, JavaScript
+* **Backend**: Node.js with Express
 
 The system allows users to:
-- Log in
-- Sign up
-- Reset passwords
-- View available houses
+
+* Log in
+* Sign up
+* Reset passwords
+* View available houses
 
 ---
 
 ## ✨ Features
 
 ### 🔐 User Authentication
-- Sign Up  
-- Login  
-- Password Reset  
 
-### 🏘️ Housing Listings
-- Display of available houses  
+* Sign Up
+* Login
+* Password Reset
+
+### 🏨 Housing Listings
+
+* Display of available houses
 
 ### 📱 Responsive Design
-- Mobile-friendly and accessible UI  
+
+* Mobile-friendly and accessible UI
 
 ### 🌐 Basic Routing
-- Handled via Node.js and Express  
+
+* Handled via Node.js and Express
 
 ---
 
@@ -43,9 +47,10 @@ The system allows users to:
 Follow these steps to set up the project locally:
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/your-username/Housing-Society-Management-System.git
-````
+   ```
 
 2. **Navigate to the project directory**
 
@@ -80,8 +85,8 @@ Follow these steps to set up the project locally:
 
 ## 📸 Screenshots
 
-> Replace the image path with your actual image
-> ![Landing Page](public/landingpage.jpg)
+![Uploading image.png…]()
+
 
 ---
 
@@ -119,6 +124,3 @@ See the [LICENSE.md](LICENSE.md) file for details.
 ## 📬 Contact
 
 For any questions or suggestions, feel free to reach out via [GitHub](https://github.com/MuhamadBinImran) or submit an issue.
-
-```
-```
