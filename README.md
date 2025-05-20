@@ -1,3 +1,4 @@
+````markdown
 # 🏡 Housing Society Management System
 
 Welcome to the **Housing Society Management System**, a web application designed to simplify community living and management for a better tomorrow. This project provides core features such as user authentication, housing listings, and a responsive interface.
@@ -9,27 +10,31 @@ Welcome to the **Housing Society Management System**, a web application designed
 This is a full-stack web application designed to manage housing society operations efficiently. It is built using:
 
 - **Frontend**: HTML, CSS, JavaScript  
-- **Backend**: Node.js with Express
+- **Backend**: Node.js with Express  
 
-The system allows users to log in, sign up, reset passwords, and view available houses.
+The system allows users to:
+- Log in
+- Sign up
+- Reset passwords
+- View available houses
 
 ---
 
 ## ✨ Features
 
-- 🔐 **User Authentication**
-  - Sign Up
-  - Login
-  - Password Reset
+### 🔐 User Authentication
+- Sign Up  
+- Login  
+- Password Reset  
 
-- 🏘️ **Housing Listings**
-  - Display of available houses
+### 🏘️ Housing Listings
+- Display of available houses  
 
-- 📱 **Responsive Design**
-  - Mobile-friendly and accessible UI
+### 📱 Responsive Design
+- Mobile-friendly and accessible UI  
 
-- 🌐 **Basic Routing**
-  - Handled via Node.js and Express
+### 🌐 Basic Routing
+- Handled via Node.js and Express  
 
 ---
 
@@ -75,7 +80,8 @@ Follow these steps to set up the project locally:
 
 ## 📸 Screenshots
 
-![Uploading image.png…]()
+> Replace the image path with your actual image
+> ![Landing Page](public/landingpage.jpg)
 
 ---
 
@@ -84,9 +90,21 @@ Follow these steps to set up the project locally:
 We welcome contributions! To contribute:
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m 'Add feature'`)
-4. Push to the branch (`git push origin feature-name`)
+2. Create a feature branch
+
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes
+
+   ```bash
+   git commit -m 'Add feature'
+   ```
+4. Push to the branch
+
+   ```bash
+   git push origin feature-name
+   ```
 5. Open a Pull Request
 
 ---
@@ -102,3 +120,5 @@ See the [LICENSE.md](LICENSE.md) file for details.
 
 For any questions or suggestions, feel free to reach out via [GitHub](https://github.com/MuhamadBinImran) or submit an issue.
 
+```
+```
